@@ -39,22 +39,35 @@ const questions = [
   },
   {
     type: "input",
+    name: "information",
+    message: "What does the user need to know about the repo?",
+  },
+  {
+    type: "input",
     name: "installation",
     message: "What command needs to be run to install dependencies?",
     default: "npm i",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "What command needs to be run to run tests?",
+    default: "npm test",
   },
 
 ];
 
 
 inquirer.prompt(questions).then(answers => {
-  console.log(answers.name)
+  console.log(answers.yourName)
   console.log(answers.title)
   console.log(answers.description)
   console.log(answers.licenses)
   console.log(answers.yourEmail)
   console.log(answers.github)
+  console.log(answers.information)
   console.log(answers.installation)
+  console.log(answers.test)
 
   const generatedContent = generateMarkdown(answers);
 
